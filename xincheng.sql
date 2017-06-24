@@ -1,0 +1,10 @@
+SET NAMES UTF8;
+DROP DATABASE IF EXISTS xincheng;
+CREATE DATABASE xincheng CHARSET=UTF8;
+USE xincheng;
+CREATE TABLE users(
+    uid INT PRIMARY KEY AUTO_INCREMENT,
+    uname VARCHAR(32),
+    email VARCHAR(32),
+    upwd VARCHAR(32)
+);
