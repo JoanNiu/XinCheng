@@ -2013,7 +2013,7 @@ p.m_8{
 	transition: all 0.3s ease-out;
 	text-decoration: none;
 	text-align:center;
-¡¡¡¡
+ï¿½ï¿½ï¿½ï¿½
 }
 
 i.but_arrow{
@@ -3139,7 +3139,7 @@ fieldset.input input[type="submit"]:hover {
 	display: block;
 	text-transform: uppercase;
 }
-.register-top-grid input[type="text"], .register-bottom-grid input[type="text"] 
+.register-top-grid input[type="text"], .register-top-grid input[type="email"],  .register-top-grid input[type="password"], .register-bottom-grid input[type="text"], .register-bottom-grid input[type="email"],.register-bottom-grid input[type="password"]
 {
    
 	border: 1px solid #EEE;

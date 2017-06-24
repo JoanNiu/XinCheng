@@ -1,5 +1,5 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE HTML>
+<html>
 <head>
  <title>新城教育</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
@@ -85,17 +85,18 @@
           <div class="container">
          <div class="shop_top">
 	     <div class="col-md-12">
-						<form> 
+						<form action="#">
 								<div class="register-top-grid">
 										<h3>个人信息填写</h3>
 										<div>
-											<span>用户名<label>*</label></span>
-											<input type="text"> 
+											<span>用户名*</span>
+											<input type="text" id="uname" placeholder="6~8位数字字母">
+											<span id="nTip" style="color:red"></span>
 										</div>
 										
 										<div>
-											<span>邮箱<label>*</label></span>
-											<input type="text"> 
+											<span>邮箱</span>
+											<input type="email" id="email" placeholder="请输入邮箱">
 										</div>
 										<div class="clear"> </div>
 											
@@ -105,17 +106,19 @@
 										<h3>登录信息</h3>
 										<div>
 											<span>密码<label>*</label></span>
-											<input type="text">
+											<input type="password" id="upwd" placeholder="请输入密码">
+											<span id="pTip" style="color:red"></span>
 										</div>
 										<div>
 											<span>确认密码<label>*</label></span>
-											<input type="text">
+											<input type="password" id="reupwd" placeholder="请再次输入密码">
+											<span id="rpTip" style="color:red"></span>
 										</div>
 										<div class="clear"> </div>
 								</div>
 								<div class="clear"> </div>
                                 <div class="buttonzc">
-					             <input type="submit" value="提交信息">
+					             <input type="button" value="提交信息" id="btn">
 					                </div>
 								
 						</form>
@@ -201,5 +204,37 @@
 			</div>
             </div>
 		</div>
-</body>	
+</body>
+<script>
+	btn.onclick=function(){
+        var reg=/^[0-9A-Za-z]{6,8}$/i;
+        if(!reg.test(uname.value)){
+            nTip.innerHTML="用户名是6~8位的数字字母";
+        }else if(!reg.test(upwd.value)){
+            pTip.innerHTML="密码是6~8位的数字字母";
+        }else if(upwd.value!=reupwd.value){
+            rpTip.innerHTML="两次输入密码不一致";
+		}else{
+            console.log(1);
+            console.log(uname.value,email.value,upwd.value)
+            $.ajax({
+                type:"post",
+                url:"/zhuce",
+                data:{uname:uname.value,email:email.value,upwd:upwd.value},
+                success:function(data){
+                    console.log(data);
+                    if(data.code>0){
+                        alert("登陆成功！");
+						location.href="index.html";
+                    }
+                }
+
+            })
+		}
+
+
+
+	}
+
+</script>
 </html>

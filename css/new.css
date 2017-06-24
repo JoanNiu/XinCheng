@@ -313,7 +313,7 @@ color: #555;
 
 
 .shop_top{ padding:0 200px 0 300px;}
-.buttonzc input[type="submit"] {
+.buttonzc input[type="submit"],.buttonzc input[type="button"] {
 background: #00BFF0;
 border: none;
 color: #FFF;

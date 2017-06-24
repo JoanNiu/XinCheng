@@ -111,7 +111,7 @@
 							    <p id="login-form-remember">
 							     
 							   </p>
-							    <input type="submit" name="Submit" class="button" value="登录"><div class="clear"></div>
+							    <input type="button" name="Submit" class="button" id="btn" value="登录"><div class="clear"></div>
 							 </div>
 						  </fieldset>
 						 </form>
@@ -199,5 +199,21 @@
 			</div>
             </div>
 		</div>
+	<script>
+		btn.onclick=function(){
+		    $.ajax({
+				type:"post",
+				url:"/login",
+				data:{uname:modlgn_username.value,upwd:modlgn_passwd.value},
+				success:function(data){
+				    console.log(data);
+				    if(data.code>0){
+				        alert("登陆成功！");
+				        location.href="index.html";
+					}
+				}
+			})
+		}
+	</script>
 </body>	
 </html>
