@@ -30,7 +30,9 @@ app.post("/zhuce",(req,res)=>{
             conn.query("INSERT INTO users VALUES(null,?,?,?)",[obj.uname,obj.email,obj.upwd],(err,result)=>{
                 if(err) throw err;
                 console.log(result);
-                res.json({code:1,msg:"success!"});
+                if(result.insertId){
+                    res.json({code:1,msg:"success!"});
+                }
                 conn.release();
             })
         })
