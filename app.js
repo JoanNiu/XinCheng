@@ -5,15 +5,16 @@ const qs=require("querystring");
 
 //创建连接池
 var pool=mysql.createPool({
-    host:"127.0.0.1",
-    database:"xincheng",
-    user:"root",
-    password:"",
-    connectionLimit:10
+    host:"w.rdc.sae.sina.com.cn",
+    database:"app_joan",
+    user:"1j1k1o2z10",
+    port:3306,
+    password:"iy0zkhxlhwyhh5x2kj23kw3k3ykzyl05k51z3iyi",
+    connectionLimit:30
 });
 
 var app=express();
-http.createServer(app).listen(8990);
+http.createServer(app).listen(5050);
 
 //访问静态资源中间件
 app.use(express.static("./"));
