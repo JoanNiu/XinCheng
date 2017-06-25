@@ -21,7 +21,7 @@ body a{
 
 /*social navigation*/
 .navTop {
-  position: realtive;
+  position:relative;
   height: 29px;
   background: #f8f8f8;
 }
@@ -32,7 +32,7 @@ body a{
 margin-top: 5px;
 font-size:15px;
     color:#666;
-    font:  arial,'microsoft yahei',"\5B8B\4F53",sans-serif;
+    font:arial,'microsoft yahei',"\5B8B\4F53",sans-serif;
     margin-left:20px;
         }
 .dlzc a{ color:#666; text-decoration:none; font-size:12px;}
